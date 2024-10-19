@@ -1,4 +1,4 @@
-# Rust Meta Repo
+# Rust Console Apps
 
 create a new rust project with;
 
