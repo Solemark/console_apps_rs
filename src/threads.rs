@@ -32,7 +32,7 @@ fn number_to_letter(i: i32) -> String {
 pub fn thread_result_handling(msg: String) -> String {
     match thread::spawn(move || format!("message: {}", msg)).join() {
         Ok(s) => s,
-        Err(_) => "Error! Thread died!".to_string(),
+        Err(_) => "error, thread died".to_string(),
     }
 }
 
@@ -47,7 +47,7 @@ pub fn sender_reciever(msg: String) -> String {
 pub fn wait_a_bit(i: u64) -> String {
     thread::spawn(move || {
         thread::sleep(Duration::from_secs(i));
-        format!("waited {} seconds!", i)
+        format!("waited {i} second(s)")
     })
     .join()
     .unwrap()

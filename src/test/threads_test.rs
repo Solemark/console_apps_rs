@@ -25,8 +25,8 @@ mod tests {
 
     #[test]
     fn test_wait_a_bit() {
-        let exp = String::from("waited 10 seconds!");
-        let res = wait_a_bit(10);
+        let exp = String::from("waited 1 second(s)");
+        let res = wait_a_bit(1);
         assert_eq!(exp, res);
     }
 }

@@ -9,7 +9,7 @@ mod tests {
 
     #[test]
     fn test_circle_area() {
-        let input: [f32; 4] = get_data();
+        let input = get_data();
         for r in input {
             let exp = {
                 if r > 0.0 {
@@ -25,7 +25,7 @@ mod tests {
 
     #[test]
     fn test_circle_perim() {
-        let input: [f32; 4] = get_data();
+        let input = get_data();
         for r in input {
             let exp = {
                 if r > 0.0 {
