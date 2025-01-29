@@ -18,7 +18,7 @@ mod tests {
                     0.0
                 }
             };
-            let res = area(r);
+            let res = area(r).unwrap_or_default();
             assert_eq!(exp, res);
         }
     }
@@ -34,7 +34,7 @@ mod tests {
                     0.0
                 }
             };
-            let res = perimeter(r);
+            let res = perimeter(r).unwrap_or_default();
             assert_eq!(exp, res);
         }
     }
