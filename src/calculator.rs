@@ -1,19 +1,34 @@
-#[allow(dead_code)]
-pub fn add<N: std::ops::Add<Output = N>>(x: N, y: N) -> N {
-    x + y
+pub struct Calculator<N> {
+    pub a: N,
+    pub b: N,
 }
 
 #[allow(dead_code)]
-pub fn sub<N: std::ops::Sub<Output = N>>(x: N, y: N) -> N {
-    x - y
-}
+impl<
+        N: std::ops::Add<Output = N>
+            + std::ops::Sub<Output = N>
+            + std::ops::Mul<Output = N>
+            + std::ops::Div<Output = N>
+            + std::clone::Clone,
+    > Calculator<N>
+{
+    pub fn new(a: N, b: N) -> Self {
+        Calculator { a, b }
+    }
 
-#[allow(dead_code)]
-pub fn mul<N: std::ops::Mul<Output = N>>(x: N, y: N) -> N {
-    x * y
-}
+    pub fn add(&self) -> N {
+        self.a.clone() + self.b.clone()
+    }
 
-#[allow(dead_code)]
-pub fn div<N: std::ops::Div<Output = N>>(x: N, y: N) -> N {
-    x / y
+    pub fn sub(&self) -> N {
+        self.a.clone() - self.b.clone()
+    }
+
+    pub fn mul(&self) -> N {
+        self.a.clone() * self.b.clone()
+    }
+
+    pub fn div(&self) -> N {
+        self.a.clone() / self.b.clone()
+    }
 }
