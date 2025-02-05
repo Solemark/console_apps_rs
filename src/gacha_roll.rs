@@ -49,7 +49,7 @@ impl GachaRoll {
 
     pub fn play(&self) -> String {
         for roll in 1..self.pity {
-            if self.rate == rand::thread_rng().gen_range(1..=self.rate) {
+            if self.rate == rand::rng().random_range(1..=self.rate) {
                 return self.get_win_string(roll);
             }
         }
